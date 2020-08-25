@@ -31,6 +31,15 @@ function createTd(value) {
   return td
 }
 
+function createProfessionString(professions, index) {
+  if(professions?.professions[index]?.name) {
+    const professionName = professions?.professions[index]?.name
+    const professionSkill = professions?.professions[index]?.skill
+    return `${professionName} (${professionSkill})`
+  }
+  return ''
+}
+
 function addOnlineMembers(onlineMembers) {
   onlineMembers.forEach( member => {
     var tr = document.createElement("TR");
@@ -41,9 +50,9 @@ function addOnlineMembers(onlineMembers) {
     tr.appendChild(tdNick)
     var tdClass = createTd(member.class)
     tr.appendChild(tdClass)
-    var tdProf1 = createTd(member.professions.professions[0].name + " (" + member.professions.professions[0].skill + ")")
+    var tdProf1 = createTd(createProfessionString(member.professions, 0))
     tr.appendChild(tdProf1)
-    var tdProf2 = createTd(member.professions.professions[1].name + " (" + member.professions.professions[1].skill + ")")
+    var tdProf2 = createTd(createProfessionString(member.professions, 1))
     tr.appendChild(tdProf2)
 
     document.getElementById("members-table-body").appendChild(tr);
