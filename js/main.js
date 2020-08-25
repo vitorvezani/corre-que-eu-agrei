@@ -3,8 +3,8 @@ const GUILD_URL = 'http://armory.warmane.com/api/guild/Corre+Que+Eu+Agrei/Lordae
 var origin = window.location.protocol + '//' + window.location.host;
 
 function setTextForClass(response, elementId, clazz) {
-  const paladinsCount = response.roster.filter(element => element.class == clazz).length;
-  document.getElementById(elementId).innerText = paladinsCount
+  const classCount = response.roster.filter(element => element.class == clazz).length;
+  document.getElementById(elementId).innerText = classCount
 }
 
 function createLinkElement(value) {
@@ -60,10 +60,7 @@ function addOnlineMembers(onlineMembers) {
 }
 
 fetch(GUILD_URL, { 
-  method: 'GET',  
-  headers: {
-    'origin': origin
-  }
+  method: 'GET'
 })
 .then(response => response.json())
 .then(response => {
