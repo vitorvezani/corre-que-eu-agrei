@@ -1,4 +1,4 @@
-const GUILD_URL = 'https://cors-anywhere.herokuapp.com/http://armory.warmane.com/api/guild/Corre+Que+Eu+Agrei/Lordaeron/summary'
+const GUILD_URL = 'http://armory.warmane.com/api/guild/Corre+Que+Eu+Agrei/Lordaeron/summary'
 // const GUILD_URL = 'summary.json'
 var origin = window.location.protocol + '//' + window.location.host;
 
