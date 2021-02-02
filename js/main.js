@@ -89,6 +89,7 @@ fetch(GUILD_URL, {
   setTextForClass(response, 'hunters-count', 'Hunter')
   setTextForClass(response, 'warlocks-count', 'Warlock')
   setTextForClass(response, 'paladins-count', 'Paladin')
+  setTextForClass(response, 'priests-count', 'Priest')
 
   addOnlineMembers(onlineMembers)
 });
